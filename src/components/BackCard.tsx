@@ -2,7 +2,7 @@ import React from 'react'
 import { SiGutenberg } from 'react-icons/si';
 
 interface BackCardProps {
-    height: number;
+    height?: number;
 }
 const BackCard: React.FC<BackCardProps> = ({ height = 192 }) => {
     const width = (height * 250) / 350;
