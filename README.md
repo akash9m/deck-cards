@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Card Library
+
+This library provides two versatile card components: `Card` and `BackCard`. These components are styled dynamically using a combination of Tailwind CSS and JavaScript to ensure flexibility while adhering to standard card dimensions.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+1. Clone the repository.
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Running the Project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To start the development server, run:
 
-## Learn More
+```bash
+    npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Building the Library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To build the library for production, run:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+    npm run build
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. **Card**
+
+The `Card` component is designed to display playing cards with customizable suits, values, and dimensions.
+
+#### Props
+| **Prop**  | **Type**                                    | **Description**                            | **Default**  |
+|-----------|---------------------------------------------|--------------------------------------------|--------------|
+| `suit`    |`"Heart","Diamond","Club","Spade","Joker"`   | The suit of the card.                      |       -      |
+| `value`   |`'A','2','3',....,'10','J','Q','K','JOOKER'` | The value of the card.                     |       -      |
+| `height`  | `number`                                    | Height of the card in pixels.              |     `192`    |
+
+#### Example Usage
+
+```tsx
+    <Card suit="Heart" value="A" height={290} />
+    <Card suit="Joker" value="JOKER" height={250} />
+```
+
+---
+
+### 2. **BackCard**
+
+The `BackCard` component renders the back side of a playing card. It is primarily used as a placeholder or in a deck display.
+
+#### Props
+| **Prop**  | **Type**  | **Description**               | **Default** |
+|-----------|-----------|-------------------------------|-------------|
+| `height`  | `number`  | Height of the card in pixels. | `192`       |
+
+#### Example Usage
+
+```tsx
+    <BackCard height={250} />
+```
+
+---
+
+## Styling Information
+
+The components use both **Tailwind CSS** and **JavaScript** for styling. JavaScript is used for properties that couldn't be directly controlled through Tailwind CSS.
+
+- **Dynamic Scaling**:  
+  `_1` is a unit derived from the `height` prop, where `_1` represents `1px` when the height is `192px`. This ensures all styles scale proportionally.  
+  For example:
+  - `_1 * 10` equals `10px` when `height = 192`.
+  - Adjusting `height` dynamically recalculates `_1`.
+
+- **Fixed Width**:  
+  The width of the cards is determined based on the standard deck of cards to maintain proper proportions:
+
+```tsx
+  const width = (height * 250) / 350;
+```
+
+---
+
+## Additional Notes
+
+- The default `height` for both components is `192px`.
+- The components are designed to work seamlessly with standard playing card dimensions.
+- The library is optimized for both dynamic usage in applications and flexibility in styling.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
