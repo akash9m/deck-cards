@@ -77,31 +77,35 @@ The components are styled using a mix of **Tailwind CSS** and **JavaScript** for
 
 Contributions are welcome! Feel free to submit issues or pull requests for improvements.
 
-   ### Installation
+### Installation
 
-    1. Clone the repository:- https://github.com/akash9m/deck-cards.git
-    2. Install dependencies:
+1. Clone the repository:- 
+```bash
+https://github.com/akash9m/deck-cards.git
+```
 
-    ```bash
-    npm install
-    ```
-   ### Development
+2. Install dependencies:
 
-   #### Running the Project
+```bash
+npm install
+```
+## Development
 
-    To start the development server, run:
+## Running the Project
 
-    ```bash
-        npm run dev
-    ```
+To start the development server, run:
 
-   #### Building the Library
+```bash
+npm run dev
+```
 
-    To build the library for production, run:
+## Building the Library
 
-    ```bash
-        npm run build
-    ```
+To build the library for production, run:
+
+```bash
+npm run build
+```
 
 
 ---
