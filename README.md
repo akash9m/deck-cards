@@ -1,35 +1,23 @@
-# Card Library
+# Deck Cards
 
-This library provides two versatile card components: `Card` and `BackCard`. These components are styled dynamically using a combination of Tailwind CSS and JavaScript to ensure flexibility while adhering to standard card dimensions.
+**`deck-cards`** is a simple, customizable React library for rendering card components. The library provides a `Card` component to display standard playing cards and a `BackCard` component for displaying the back of cards. It is lightweight, styled using Tailwind CSS and JavaScript, and designed for flexibility.
 
 ---
 
-## Getting Started
+## Installation
 
-### Installation
-
-1. Clone the repository.
-2. Install dependencies:
-
+Install the library via npm:
 ```bash
-   npm install
+npm install deck-cards
 ```
 
+---
 
-### Running the Project
+## Usage
 
-To start the development server, run:
-
-```bash
-    npm run dev
-```
-
-### Building the Library
-
-To build the library for production, run:
-
-```bash
-    npm run build
+Import the components into your project:
+```javascript
+import { Card, BackCard } from 'deck-cards';
 ```
 
 ---
@@ -38,27 +26,26 @@ To build the library for production, run:
 
 ### 1. **Card**
 
-The `Card` component is designed to display playing cards with customizable suits, values, and dimensions.
+The `Card` component renders a customizable playing card with a specified suit, value, and height.
 
 #### Props
-| **Prop**  | **Type**                                    | **Description**                            | **Default**  |
-|-----------|---------------------------------------------|--------------------------------------------|--------------|
-| `suit`    |`"Heart","Diamond","Club","Spade","Joker"`   | The suit of the card.                      |       -      |
-| `value`   |`'A','2','3',....,'10','J','Q','K','JOOKER'` | The value of the card.                     |       -      |
-| `height`  | `number`                                    | Height of the card in pixels.              |     `192`    |
+| **Prop**  | **Type**                                       | **Description**                            | **Default**   |
+|-----------|------------------------------------------------|--------------------------------------------|---------------|
+| `suit`    | `"Heart", "Diamond", "Club", "Spade", "Joker"` | The suit of the card.                      |       -       |
+| `value`   | `'A','2','3',....,'10','J','Q','K','JOOKER'`   | The value of the card.                     |       -       |
+| `height`  | `number`                                       | Height of the card in pixels.              |     `192`     |
 
 #### Example Usage
-
-```tsx
-    <Card suit="Heart" value="A" height={290} />
-    <Card suit="Joker" value="JOKER" height={250} />
+```jsx
+<Card suit="Heart" value="A" height={250} />
+<Card suit="Joker" value="JOKER" height={290} />
 ```
 
 ---
 
 ### 2. **BackCard**
 
-The `BackCard` component renders the back side of a playing card. It is primarily used as a placeholder or in a deck display.
+The `BackCard` component renders the back side of a playing card. It is useful for placeholders or representing a deck.
 
 #### Props
 | **Prop**  | **Type**  | **Description**               | **Default** |
@@ -66,38 +53,60 @@ The `BackCard` component renders the back side of a playing card. It is primaril
 | `height`  | `number`  | Height of the card in pixels. | `192`       |
 
 #### Example Usage
-
-```tsx
-    <BackCard height={250} />
+```jsx
+<BackCard height={300} />
 ```
 
 ---
 
 ## Styling Information
 
-The components use both **Tailwind CSS** and **JavaScript** for styling. JavaScript is used for properties that couldn't be directly controlled through Tailwind CSS.
+The components are styled using a mix of **Tailwind CSS** and **JavaScript** for optimal flexibility.
 
-- **Dynamic Scaling**:  
-  `_1` is a unit derived from the `height` prop, where `_1` represents `1px` when the height is `192px`. This ensures all styles scale proportionally.  
-  For example:
-  - `_1 * 10` equals `10px` when `height = 192`.
-  - Adjusting `height` dynamically recalculates `_1`.
-
-- **Fixed Width**:  
-  The width of the cards is determined based on the standard deck of cards to maintain proper proportions:
-
-```tsx
-  const width = (height * 250) / 350;
-```
+### Notes:
+- **Width:** Automatically calculated based on a standard card aspect ratio.
+- **_1 Variable:** `_1` is a scaling variable where:
+  - `_1` = `1px` when height = `192`.
+  - Use `_1 * 10` for `10px`, `_1 * 20` for `20px`, etc.
+  - Adjusts dynamically based on the specified height.
 
 ---
 
-## Additional Notes
 
-- The default `height` for both components is `192px`.
-- The components are designed to work seamlessly with standard playing card dimensions.
-- The library is optimized for both dynamic usage in applications and flexibility in styling.
+## Contribution
+
+Contributions are welcome! Feel free to submit issues or pull requests for improvements.
+
+   ### Installation
+
+    1. Clone the repository:- https://github.com/akash9m/deck-cards.git
+    2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+   ### Development
+
+   #### Running the Project
+
+    To start the development server, run:
+
+    ```bash
+        npm run dev
+    ```
+
+   #### Building the Library
+
+    To build the library for production, run:
+
+    ```bash
+        npm run build
+    ```
+
+
+---
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License.
+
