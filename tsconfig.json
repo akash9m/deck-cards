@@ -8,17 +8,19 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": false, // Changed to false to allow output files
-    "declaration": true, // Generates .d.ts files for consumers
-    "declarationMap": true, // Includes source maps for .d.ts files
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict":false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "noEmit": false, // Changed to false to allow output files
+    "jsx": "react-jsx",
+
+    
     "plugins": [
       {
         "name": "next"
@@ -44,3 +46,4 @@
     "dist"
   ]
 }
+

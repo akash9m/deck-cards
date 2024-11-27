@@ -24,7 +24,7 @@ const suitIcons: Record<CardProps["suit"], JSX.Element | string> = {
   Heart: "♥",
   Diamond: "♦",
   Club: "♣",
-  Joker: <Image src={JOKER} alt="Joker" width={100} height={100}/>,
+  Joker: <Image src={JOKER} alt="Joker" height={100} width={100} />,
 };
 
 const allowedSuits = ["Spade", "Heart", "Diamond", "Club", "Joker"];

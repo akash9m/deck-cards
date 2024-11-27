@@ -99,14 +99,20 @@ To start the development server, run:
 npm run dev
 ```
 
-## Building the Library
+## To Build the Project
 
-To build the library for production, run:
+To build the Project for production, run:
 
 ```bash
 npm run build
 ```
 
+## Building the Library
+to build the library for production, run:
+
+```bash
+npm run rollup
+```
 
 ---
 
