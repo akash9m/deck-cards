@@ -1,6 +1,6 @@
-# Deck Cards
+# Deck suits
 
-**`deck-cards`** is a simple, customizable React library for rendering card components. The library provides a `Card` component to display standard playing cards and a `BackCard` component for displaying the back of cards. It is lightweight, styled using Tailwind CSS and JavaScript, and designed for flexibility.
+**`deck-suit`** is a simple, customizable React library for rendering card components. The library provides a `Card` component to display standard playing cards and a `BackCard` component for displaying the back of cards. It is lightweight, styled using Tailwind CSS and JavaScript, and designed for flexibility.
 
 ---
 
@@ -8,7 +8,7 @@
 
 Install the library via npm:
 ```bash
-npm install deck-cards
+npm install deck-suit
 ```
 
 ---
@@ -17,7 +17,7 @@ npm install deck-cards
 
 Import the components into your project:
 ```javascript
-import { Card, BackCard } from 'deck-cards';
+import { Card, BackCard } from 'deck-suit';
 ```
 
 ---
@@ -81,7 +81,7 @@ Contributions are welcome! Feel free to submit issues or pull requests for impro
 
 1. Clone the repository:- 
 ```bash
-https://github.com/akash9m/deck-cards.git
+https://github.com/akash9m/deck-suit.git
 ```
 
 2. Install dependencies:
