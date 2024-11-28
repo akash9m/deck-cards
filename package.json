@@ -1,6 +1,6 @@
 {
   "name": "deck-suit",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A reusable library for deck card components.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akash9m/suit-stack.git"
+    "url": "https://github.com/akash9m/deck-suit.git"
   },
   "author": {
     "name": "Akash Maurya",
