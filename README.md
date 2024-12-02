@@ -59,6 +59,135 @@ The `BackCard` component renders the back side of a playing card. It is useful f
 
 ---
 
+Here's a detailed explanation of the TypeScript types provided by the library and their potential use cases:
+
+---
+
+## **Types**
+
+### 1. **StandardCardType**
+- **Definition:** Represents a standard playing card with a suit (e.g., Spade, Heart) and a value (e.g., A, 2, K).
+- **Properties:**
+  - `suit`: `"Spade" | "Heart" | "Diamond" | "Club"`
+  - `value`: `"A" | "2" | "3" | ... | "K"`
+  - `height?`: Optional property to define the card's height.
+
+#### **Use Case:**
+When you need to handle a standard card deck in your application, such as for a card game or a visualization of a deck, use `StandardCardType` to ensure consistent structure.
+
+**Example:**
+```typescript
+const standardCard: StandardCardType = {
+  suit: "Spade",
+  value: "A",
+  height: 192, // Optional
+};
+```
+
+---
+
+### 2. **JokerCardType**
+- **Definition:** Represents a joker card, where both the suit and value are predefined as `"Joker"`.
+- **Properties:**
+  - `suit`: `"Joker"`
+  - `value`: `"JOKER"`
+  - `height?`: Optional property to define the card's height.
+
+#### **Use Case:**
+Use this type when handling joker cards separately from standard cards, such as for games where jokers are treated differently.
+
+**Example:**
+```typescript
+const jokerCard: JokerCardType = {
+  suit: "Joker",
+  value: "JOKER",
+  height: 250, // Optional
+};
+```
+
+---
+
+### 3. **SuitTypeStandard**
+- **Definition:** A union type for all valid suits in a standard deck: `"Spade" | "Heart" | "Diamond" | "Club"`.
+
+#### **Use Case:**
+Use `SuitTypeStandard` when you want to restrict inputs or values to valid card suits.
+
+**Example:**
+```typescript
+const cardSuit: SuitTypeStandard = "Heart"; // Valid
+// const invalidSuit: SuitTypeStandard = "Star"; // Error: Not a valid suit
+```
+
+---
+
+### 4. **ValueTypeStandard**
+- **Definition:** A union type for all valid values in a standard deck: `"A" | "2" | ... | "K"`.
+
+#### **Use Case:**
+Use `ValueTypeStandard` to restrict inputs or validate that a card value is within the standard range.
+
+**Example:**
+```typescript
+const cardValue: ValueTypeStandard = "K"; // Valid
+// const invalidValue: ValueTypeStandard = "11"; // Error: Not a valid card value
+```
+
+---
+
+### 5. **SuitTypeJoker**
+- **Definition:** A fixed type representing the suit of a joker card: `"Joker"`.
+
+#### **Use Case:**
+Use `SuitTypeJoker` to explicitly define that a card is a joker.
+
+**Example:**
+```typescript
+const jokerSuit: SuitTypeJoker = "Joker"; // Always valid
+```
+
+---
+
+### 6. **ValueTypeJoker**
+- **Definition:** A fixed type representing the value of a joker card: `"JOKER"`.
+
+#### **Use Case:**
+Use `ValueTypeJoker` to define the unique value of a joker card.
+
+**Example:**
+```typescript
+const jokerValue: ValueTypeJoker = "JOKER"; // Always valid
+```
+
+---
+
+### 7. **AllCardArrayType**
+- **Definition:** A union type combining arrays of `StandardCardType` and `JokerCardType`.
+
+#### **Use Case:**
+When working with a complete deck of cards that includes both standard and joker cards, use `AllCardArrayType` to handle them in a unified way.
+
+**Example:**
+```typescript
+const allCards: AllCardArrayType = [
+  { suit: "Spade", value: "A", height: 192 }, // Standard card
+  { suit: "Joker", value: "JOKER", height: 192 }, // Joker card
+];
+```
+
+---
+
+## **Why Use These Types?**
+
+1. **Type Safety:** Ensure your application handles cards in a consistent and error-free manner.
+2. **Autocomplete Support:** Gain better developer experience with IDE suggestions.
+3. **Validation:** Prevent invalid values (e.g., invalid suits or card values) in your code.
+4. **Flexibility:** Easily distinguish between standard and joker cards for different use cases.
+
+Let me know if you'd like examples for more specific scenarios!
+
+---
+
 ## Styling Information
 
 The components are styled using a mix of **Tailwind CSS** and **JavaScript** for optimal flexibility.

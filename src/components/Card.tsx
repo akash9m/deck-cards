@@ -4,20 +4,30 @@ import { GiChessKing, GiChessQueen } from "react-icons/gi";
 import JOKER from "../assets/joker.png";
 import Image from "next/image";
 
-interface JokerCardProps {
-  suit: "Joker";
-  value: "JOKER"; // Only allowed value for Joker
-  height?: number;
+// Types for suits and values for standard and joker cards
+export type SuitTypeStandard = "Spade" | "Heart" | "Diamond" | "Club";
+export type ValueTypeStandard = "A" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "J" | "Q" | "K";
+
+// Types for joker card (suit and value are both "Joker")
+export type SuitTypeJoker = "Joker";
+export type ValueTypeJoker = "JOKER";
+
+// Interfaces for the card types
+export interface JokerCardType {
+    suit: SuitTypeJoker;  // "Joker"
+    value: ValueTypeJoker; // "Joker"
+    height?:192
 }
 
-interface StandardCardProps {
-  suit: "Spade" | "Heart" | "Diamond" | "Club";
-  value: "A" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "J" | "Q" | "K"; // Standard card values
-  height?: number;
+export interface StandardCardType {
+    suit: SuitTypeStandard;  // One of "Spade" | "Heart" | "Diamond" | "Club"
+    value: ValueTypeStandard; // One of "A" | "2" | "3" | "4" | etc.
+    height?:192
 }
 
-// Combined type for card props
-type CardProps = JokerCardProps | StandardCardProps;
+// Union type to allow either a StandardCard or a JokerCard
+export type CardProps = StandardCardType | JokerCardType;
+
 
 const suitIcons: Record<CardProps["suit"], JSX.Element | string> = {
   Spade: "♠",
