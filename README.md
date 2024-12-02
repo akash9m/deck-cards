@@ -65,6 +65,10 @@ Here's a detailed explanation of the TypeScript types provided by the library an
 
 ## **Types**
 
+```tsx
+import { StandardCardType, JokerCardType, SuitTypeStandard, ValueTypeStandard, SuitTypeJoker, ValueTypeJoker, AllCardArrayType } from 'deck-suit';
+```
+
 ### 1. **StandardCardType**
 - **Definition:** Represents a standard playing card with a suit (e.g., Spade, Heart) and a value (e.g., A, 2, K).
 - **Properties:**
@@ -177,16 +181,6 @@ const allCards: AllCardArrayType = [
 
 ---
 
-## **Why Use These Types?**
-
-1. **Type Safety:** Ensure your application handles cards in a consistent and error-free manner.
-2. **Autocomplete Support:** Gain better developer experience with IDE suggestions.
-3. **Validation:** Prevent invalid values (e.g., invalid suits or card values) in your code.
-4. **Flexibility:** Easily distinguish between standard and joker cards for different use cases.
-
-Let me know if you'd like examples for more specific scenarios!
-
----
 
 ## Styling Information
 
