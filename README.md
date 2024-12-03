@@ -165,12 +165,6 @@ const jokerValue: ValueTypeJoker = "JOKER"; // Always valid
 
 ---
 
-### 7. **AllCardArrayType**
-- **Definition:** A union type combining arrays of `StandardCardType` and `JokerCardType`.
-
-#### **Use Case:**
-When working with a complete deck of cards that includes both standard and joker cards, use `AllCardArrayType` to handle them in a unified way.
-
 **Example:**
 ```typescript
 const allCards: AllCardArrayType = [

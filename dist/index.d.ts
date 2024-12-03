@@ -22,6 +22,4 @@ interface BackCardProps {
 }
 declare const BackCard: React.FC<BackCardProps>;
 
-type AllCardArrayType = StandardCardType[] & JokerCardType[];
-
-export { type AllCardArrayType, BackCard, Card, type JokerCardType, type StandardCardType, type SuitTypeJoker, type SuitTypeStandard, type ValueTypeJoker, type ValueTypeStandard };
+export { BackCard, Card, type JokerCardType, type StandardCardType, type SuitTypeJoker, type SuitTypeStandard, type ValueTypeJoker, type ValueTypeStandard };
