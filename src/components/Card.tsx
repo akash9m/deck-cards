@@ -16,20 +16,17 @@ export type ValueTypeJoker = "JOKER";
 export interface JokerCardType {
     suit: SuitTypeJoker;  // "Joker"
     value: ValueTypeJoker; // "Joker"
-    height?:192
+    height?:number
 }
 
 export interface StandardCardType {
     suit: SuitTypeStandard;  // One of "Spade" | "Heart" | "Diamond" | "Club"
     value: ValueTypeStandard; // One of "A" | "2" | "3" | "4" | etc.
-    height?:192
+    height?:number
 }
 
-// Union type to allow either a StandardCard or a JokerCard
-export type CardProps = StandardCardType | JokerCardType;
 
-
-const suitIcons: Record<CardProps["suit"], JSX.Element | string> = {
+const suitIcons: Record<(StandardCardType | JokerCardType)["suit"], JSX.Element | string> = {
   Spade: "♠",
   Heart: "♥",
   Diamond: "♦",
@@ -43,7 +40,7 @@ const allowedValuesForJoker = ["JOKER"];
 
 
 
-const Card: React.FC<CardProps> = ({ suit, value, height = 192 }) => {
+const Card: React.FC< StandardCardType | JokerCardType> = ({ suit, value, height = 192 }) => {
 
   const isRed = suit === "Heart" || suit === "Diamond"; // Red suits
 

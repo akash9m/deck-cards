@@ -1,6 +1,6 @@
 {
   "name": "deck-suit",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A reusable library for deck card components.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

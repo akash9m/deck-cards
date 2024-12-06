@@ -165,17 +165,6 @@ const jokerValue: ValueTypeJoker = "JOKER"; // Always valid
 
 ---
 
-**Example:**
-```typescript
-const allCards: AllCardArrayType = [
-  { suit: "Spade", value: "A", height: 192 }, // Standard card
-  { suit: "Joker", value: "JOKER", height: 192 }, // Joker card
-];
-```
-
----
-
-
 ## Styling Information
 
 The components are styled using a mix of **Tailwind CSS** and **JavaScript** for optimal flexibility.
